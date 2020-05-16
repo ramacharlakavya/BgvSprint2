@@ -1,23 +1,25 @@
 package com.cap.entity;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 
-@Table(name="verific")
+@Table(name="verific1")
 
 public class VerificationDto
-{
-	@Id
-int empid;
+{@Id
+	@GeneratedValue
+	private int verfId;
  String status;
-public int getEmpid() {
-	return empid;
-}
-public void setEmpid(int empid) {
-	this.empid = empid;
-}
+ public int getVerfId() {
+		return verfId;
+	}
+	public void setVerfId(int verfId) {
+		this.verfId = verfId;
+	}
+
 public String getStatus() {
 	return status;
 }

@@ -2,11 +2,12 @@ package com.cap.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 @Entity
-@Table(name="docuemp")
+@Table(name="docuemp1")
 public class EmployeeDocumentDto
 {
     @Id
@@ -17,7 +18,16 @@ public class EmployeeDocumentDto
     int docId;
     String docType;
  
-    String docData;
+   String docData;
+   @OneToOne
+   @JoinColumn(name="verfId")
+   VerificationDto verificationdto;
+   public VerificationDto getVerificationdto() {
+		return verificationdto;
+	}
+	public void setVerificationdto(VerificationDto verificationdto) {
+		this.verificationdto = verificationdto;
+	}
     public int getEmpId() {
 		return empId;
 	}
